@@ -16,8 +16,13 @@ require_once plugin_dir_path(__FILE__) . 'includes/meta-box.php';
 require_once plugin_dir_path(__FILE__) . 'includes/settings.php';
 
 function mtg_enqueue_admin_styles($hook) {
-    if ($hook == 'post.php' || $hook == 'post-new.php') { // Ensure styles load only in post/page editors
-        wp_enqueue_style('mtg-admin-css', plugin_dir_url(__FILE__) . 'assets/style.css');
+    if ($hook === 'post.php' || $hook === 'post-new.php') { // Load styles only in post/page editors
+        wp_enqueue_style(
+            'mtg-admin-css',
+            plugin_dir_url(__FILE__) . 'assets/style.css',
+            array(),         // Dependencies (none specified)
+            '1.2.0'          // Version parameter added
+        );
     }
 }
 add_action('admin_enqueue_scripts', 'mtg_enqueue_admin_styles');
