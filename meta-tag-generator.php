@@ -39,34 +39,35 @@ function mtg_add_meta_tags() {
         $twitterCard = get_post_meta($post->ID, '_mtg_meta_twitter_card', true) ?: get_option('mtg_default_twitter_card', 'summary_large_image');
 
         echo "\n<!-- Primary Meta Tags -->\n";
-        echo "<title>$pageTitle</title>\n";
-        echo "<meta name='title' content='$pageTitle'>\n";
-        echo "<meta name='description' content='$metaDescription'>\n";
-
+        echo "<title>" . esc_html($pageTitle) . "</title>\n";
+        echo "<meta name='description' content='" . esc_attr($metaDescription) . "'>\n";
+        echo "<link rel='canonical' href='" . esc_url($pageUrl) . "'>\n";
+        
         echo "\n<!-- Open Graph / Facebook -->\n";
-        echo "<meta property='og:type' content='$ogType'>\n";
-        echo "<meta property='og:url' content='$pageUrl'>\n";
-        echo "<meta property='og:title' content='$pageTitle'>\n";
-        echo "<meta property='og:description' content='$metaDescription'>\n";
-        echo "<meta property='og:image' content='$ogImage'>\n";
-
+        echo "<meta property='og:type' content='" . esc_attr($ogType) . "'>\n";
+        echo "<meta property='og:url' content='" . esc_url($pageUrl) . "'>\n";
+        echo "<meta property='og:title' content='" . esc_attr($pageTitle) . "'>\n";
+        echo "<meta property='og:description' content='" . esc_attr($metaDescription) . "'>\n";
+        echo "<meta property='og:image' content='" . esc_url($ogImage) . "'>\n";
+        
         echo "\n<!-- Twitter -->\n";
-        echo "<meta property='twitter:card' content='$twitterCard'>\n";
-        echo "<meta property='twitter:url' content='$pageUrl'>\n";
-        echo "<meta property='twitter:title' content='$pageTitle'>\n";
-        echo "<meta property='twitter:description' content='$metaDescription'>\n";
-        echo "<meta property='twitter:image' content='$ogImage'>\n";
+        echo "<meta property='twitter:card' content='" . esc_attr($twitterCard) . "'>\n";
+        echo "<meta property='twitter:url' content='" . esc_url($pageUrl) . "'>\n";
+        echo "<meta property='twitter:title' content='" . esc_attr($pageTitle) . "'>\n";
+        echo "<meta property='twitter:description' content='" . esc_attr($metaDescription) . "'>\n";
+        echo "<meta property='twitter:image' content='" . esc_url($ogImage) . "'>\n";
 
         echo "\n<!-- Schema Markup (JSON-LD) -->\n";
         $jsonLD = [
-            "@context" => "https://schema.org",
-            "@type" => $ogType === "article" ? "Article" : "WebPage",
-            "name" => $pageTitle,
-            "url" => $pageUrl,
+            "@context"    => "https://schema.org",
+            "@type"       => $ogType === "article" ? "Article" : "WebPage",
+            "name"        => $pageTitle,
+            "url"         => $pageUrl,
             "description" => $metaDescription,
-            "image" => $ogImage
+            "image"       => $ogImage
         ];
-        echo "<script type='application/ld+json'>" . json_encode($jsonLD, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . "</script>\n";
+        // Use wp_json_encode to safely encode JSON for output.
+        echo "<script type='application/ld+json'>" . wp_json_encode($jsonLD, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . "</script>\n";
     }
 }
 add_action('wp_head', 'mtg_add_meta_tags');
