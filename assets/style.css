@@ -35,5 +35,9 @@
 }
 
 .mtg-meta-box button:hover {
-    background: #0056b3;
+    background: #6441A5;
+}
+
+select.frm-select {
+    min-width: 200px;
 }
