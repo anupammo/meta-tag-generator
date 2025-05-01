@@ -1,25 +1,26 @@
-=== Meta Tag Generator ===
+=== Meta Tags SEO ===
 Contributors: anupamwp  
 Donate link: https://paypal.me/anupammondal  
 Requires at least: 5.4  
 Requires PHP: 7.2  
-Tested up to: 6.8  
+Tested up to: 6.8 
+Stable tag: 1.2.0 
 License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Tags: meta tags, SEO, Open Graph, Twitter Card, Schema Markup 
-Stable tag: 1.2.0  
  
-Meta Tag Generator auto-fetches and manages WordPress meta tags, letting users edit SEO, Open Graph, Twitter Cards, and Schema Markup effortlessly.
+Meta Tags SEO auto-fetches and manages WordPress meta tags, letting users edit SEO, Open Graph, Twitter Cards, and Schema Markup effortlessly.
 == Description ==  
-Meta Tag Generator automatically fetches meta tags for WordPress pages/posts, enabling users to edit metadata for SEO optimization.  
+Meta Tags SEO automatically fetches meta tags for WordPress pages/posts, enabling users to edit metadata for SEO optimization.  
 ✔ Supports **primary meta tags, Open Graph, Twitter Card metadata**, and **Schema Markup (JSON-LD)**  
 ✔ Auto-fetches **page title, URL, featured image**, and **default metadata settings**  
 ✔ Provides a **customizable admin settings page** for global defaults  
 ✔ Allows enabling/disabling **automatic meta injection**  
 
 == Installation ==  
-1. Upload `meta-tag-generator.zip` to `/wp-content/plugins/`.  
+1. Upload `meta-tags-generator.zip` to `/wp-content/plugins/`.  
 2. Activate the plugin in **Plugins <span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji">→</span></span></span></span> Installed Plugins**.  
-3. Open any **post/page editor** to find the Meta Tag Generator section.  
+3. Open any **post/page editor** to find the Meta Tags SEO section.  
 4. Customize meta tags, edit Open Graph & Twitter settings, and save!  
 
 == Features ==  
@@ -34,20 +35,20 @@ Meta Tag Generator automatically fetches meta tags for WordPress pages/posts, en
 
 == Frequently Asked Questions ==  
 = How do I enable automatic meta tag injection? =  
-Navigate to **Settings <span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji">→</span></span></span></span> Meta Tag Generator** and check the `Enable Meta Injection` box.  
+Navigate to **Settings <span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji">→</span></span></span></span> Meta Tags SEO** and check the `Enable Meta Injection` box.  
 
 = Does this plugin work with Yoast SEO and Rank Math? =  
 Yes! If **Yoast SEO or Rank Math** is detected, the plugin prevents duplicate meta tags from being generated.  
 
 = How can I set a default Open Graph Type & Twitter Card Type? =  
-Go to **Settings <span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji">→</span></span></span></span> Meta Tag Generator** and set your preferred defaults.  
+Go to **Settings <span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji"><span aria-hidden="true" class="wp-exclude-emoji">→</span></span></span></span> Meta Tags SEO** and set your preferred defaults.  
 
 == Upgrade Notice ==  
 = 1.2.0 =  
 Upgrade to this version for **Schema Markup support, featured image auto-fetching, and a new enable/disable setting**.  
 
 == Screenshots ==  
-1. **Meta Tag Generator UI in Post/Page Editor**  
+1. **Meta Tags SEO UI in Post/Page Editor**  
 2. **Admin Settings Panel for Global Defaults**  
 
 == Donate ==  
@@ -67,4 +68,3 @@ Support future development of this plugin by donating at:
 
 = 1.0.0 =  
 – Initial release: Core meta tag generation  
-
