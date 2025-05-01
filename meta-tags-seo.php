@@ -72,9 +72,7 @@ function mtg_add_meta_tags() {
         $twitterCard = get_post_meta($post->ID, '_mtg_meta_twitter_card', true) ?: get_option('mtg_default_twitter_card', 'summary_large_image');
 
         echo "\n<!-- Primary Meta Tags -->\n";
-        echo "<title>" . esc_html($pageTitle) . "</title>\n";
         echo "<meta name='description' content='" . esc_attr($metaDescription) . "'>\n";
-        echo "<link rel='canonical' href='" . esc_url($pageUrl) . "'>\n";
         
         echo "\n<!-- Open Graph / Facebook -->\n";
         echo "<meta property='og:type' content='" . esc_attr($ogType) . "'>\n";
