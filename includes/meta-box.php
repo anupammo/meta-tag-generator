@@ -1,12 +1,12 @@
 <?php
 /**
- * Register Meta Box for Meta Tag Generator.
+ * Register Meta Box for Meta Tags Generator.
  */
 
 function mtg_add_meta_box() {
     add_meta_box(
         'mtg_meta_box',
-        __( 'Meta Tag Generator', 'meta-tag-generator' ),
+        __( 'Meta Tags Generator', 'meta-tags-seo' ),
         'mtg_meta_box_callback',
         [ 'post', 'page' ],
         'normal',
@@ -28,48 +28,48 @@ function mtg_meta_box_callback( $post ) {
     ?>
     <div class="mtg-meta-box">
         <div class="frm">
-            <label><?php esc_html_e( 'Page Title', 'meta-tag-generator' ); ?></label>
+            <label><?php esc_html_e( 'Page Title', 'meta-tags-seo' ); ?></label>
             <input type="text" name="mtg_title" value="<?php echo esc_attr( $pageTitle ); ?>" readonly>
         </div>
         <div class="frm">
-            <label><?php esc_html_e( 'Meta Description', 'meta-tag-generator' ); ?></label>
+            <label><?php esc_html_e( 'Meta Description', 'meta-tags-seo' ); ?></label>
             <textarea name="mtg_meta_description" maxlength="160"><?php echo esc_textarea( $metaDescription ); ?></textarea>
         </div>
         <div class="frm">
-            <label><?php esc_html_e( 'Page URL', 'meta-tag-generator' ); ?></label>
+            <label><?php esc_html_e( 'Page URL', 'meta-tags-seo' ); ?></label>
             <input type="text" name="mtg_url" value="<?php echo esc_url( $pageUrl ); ?>" readonly>
         </div>
         <div class="frm">
-            <label><?php esc_html_e( 'Featured Image URL', 'meta-tag-generator' ); ?></label>
+            <label><?php esc_html_e( 'Featured Image URL', 'meta-tags-seo' ); ?></label>
             <input type="text" name="mtg_meta_image" value="<?php echo esc_url( $ogImage ); ?>" readonly>
         </div>
         <div class="frm">
-            <label><?php esc_html_e( 'Open Graph Type', 'meta-tag-generator' ); ?></label>
+            <label><?php esc_html_e( 'Open Graph Type', 'meta-tags-seo' ); ?></label>
             <select name="mtg_og_type">
                 <option value="website" <?php selected( $ogType, 'website' ); ?>>
-                    <?php esc_html_e( 'Website', 'meta-tag-generator' ); ?>
+                    <?php esc_html_e( 'Website', 'meta-tags-seo' ); ?>
                 </option>
                 <option value="article" <?php selected( $ogType, 'article' ); ?>>
-                    <?php esc_html_e( 'Article', 'meta-tag-generator' ); ?>
+                    <?php esc_html_e( 'Article', 'meta-tags-seo' ); ?>
                 </option>
             </select>
         </div>
         <div class="frm">
-            <label><?php esc_html_e( 'Twitter Card Type', 'meta-tag-generator' ); ?></label>
+            <label><?php esc_html_e( 'Twitter Card Type', 'meta-tags-seo' ); ?></label>
             <select name="mtg_twitter_card">
                 <option value="summary" <?php selected( $twitterCard, 'summary' ); ?>>
-                    <?php esc_html_e( 'Summary Card', 'meta-tag-generator' ); ?>
+                    <?php esc_html_e( 'Summary Card', 'meta-tags-seo' ); ?>
                 </option>
                 <option value="summary_large_image" <?php selected( $twitterCard, 'summary_large_image' ); ?>>
-                    <?php esc_html_e( 'Large Summary Card', 'meta-tag-generator' ); ?>
+                    <?php esc_html_e( 'Large Summary Card', 'meta-tags-seo' ); ?>
                 </option>
             </select>
         </div>
         <div class="frm">
             <p id="credit">
-                <?php esc_html_e( 'Developer :', 'meta-tag-generator' ); ?>
+                <?php esc_html_e( 'Developer :', 'meta-tags-seo' ); ?>
                 <a href="<?php echo esc_url( 'https://anupammondal.in' ); ?>" target="_blank">
-                    <?php esc_html_e( 'Anupam Mondal', 'meta-tag-generator' ); ?>
+                    <?php esc_html_e( 'Anupam Mondal', 'meta-tags-seo' ); ?>
                 </a>
             </p>
         </div>
