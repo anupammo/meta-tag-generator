@@ -14,7 +14,10 @@ delete_option( 'mtg_enabled' );
 delete_option( 'mtg_default_og_type' );
 delete_option( 'mtg_default_twitter_card' );
 
-// Remove meta data associated with posts
-global $wpdb;
-$wpdb->query( "DELETE FROM $wpdb->postmeta WHERE meta_key LIKE '_mtg_%'" );
+// Retrieve all posts that have the plugin's metadata
+$meta_keys = array( '_mtg_meta_description', '_mtg_meta_image', '_mtg_meta_ogtype', '_mtg_meta_twitter_card' );
+
+foreach ( $meta_keys as $meta_key ) {
+    delete_post_meta_by_key( $meta_key );
+}
 ?>
