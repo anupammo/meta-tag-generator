@@ -3,8 +3,8 @@
  * Plugin Name: Meta Tags SEO
  * Plugin URI: https://github.com/anupammo/meta-tags-seo
  * Description: A WordPress plugin to auto-fetch and edit meta tags with Open Graph, Twitter, and Schema Markup.
- * Requires at least: 6.3
- * Requires PHP: 7.4
+ * Requires at least: 5.4
+ * Requires PHP: 7.2
  * Version: 1.2.0
  * Author: Anupam Mondal
  * Author URI: https://anupammondal.in
@@ -44,7 +44,7 @@ register_deactivation_hook(__FILE__, 'mtg_deactivate_plugin');
 */
 
 function mtg_enqueue_admin_styles($hook) {
-    if ($hook === 'post.php' || $hook === 'post-new.php') { // Load styles only in post/page editors
+    if ($hook === 'post.php' || $hook === 'post-new.php' || $hook === 'settings_page_meta-tags-seo') { // Load styles only in post/page editors
         wp_enqueue_style(
             'mtg-admin-css',
             plugin_dir_url(__FILE__) . 'assets/style.css',
@@ -72,6 +72,7 @@ function mtg_add_meta_tags() {
         $twitterCard = get_post_meta($post->ID, '_mtg_meta_twitter_card', true) ?: get_option('mtg_default_twitter_card', 'summary_large_image');
 
         echo "\n<!-- Primary Meta Tags -->\n";
+        echo "<meta name='title' content='" . esc_attr($pageTitle) . "'>\n";
         echo "<meta name='description' content='" . esc_attr($metaDescription) . "'>\n";
         
         echo "\n<!-- Open Graph / Facebook -->\n";
