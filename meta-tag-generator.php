@@ -1,12 +1,16 @@
 <?php
 /**
- * Plugin Name: Meta Tag Generator
- * Plugin URI: https://yourwebsite.com
+ * Plugin Name: Meta Tags SEO
+ * Plugin URI: https://github.com/anupammo/meta-tags-seo
  * Description: A WordPress plugin to auto-fetch and edit meta tags with Open Graph, Twitter, and Schema Markup.
+ * Requires at least: 6.3
+ * Requires PHP: 7.4
  * Version: 1.2.0
  * Author: Anupam Mondal
  * Author URI: https://anupammondal.in
- * License: GPL2
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * Text Domain: meta-tags-seo
  */
 
 defined('ABSPATH') or die('No direct access allowed!');
