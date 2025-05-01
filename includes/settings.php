@@ -1,14 +1,14 @@
 <?php
 /**
- * Settings file for Meta Tag Generator Admin.
+ * Settings file for Meta Tags Generator Admin.
  */
 
 function mtg_add_admin_menu() {
     add_options_page(
-        esc_html__( 'Meta Tag Generator Settings', 'meta-tag-generator' ),
-        esc_html__( 'Meta Tag Generator', 'meta-tag-generator' ),
+        esc_html__( 'Meta Tags Generator Settings', 'meta-tags-seo' ),
+        esc_html__( 'Meta Tags Generator', 'meta-tags-seo' ),
         'manage_options',
-        'meta-tag-generator',
+        'meta-tags-seo',
         'mtg_settings_page'
     );
 }
@@ -16,20 +16,20 @@ add_action( 'admin_menu', 'mtg_add_admin_menu' );
 
 function mtg_settings_page() { ?>
     <div class="wrap">
-        <h1><?php esc_html_e( 'Meta Tag Generator Settings', 'meta-tag-generator' ); ?></h1>
+        <h1><?php esc_html_e( 'Meta Tags Generator Settings', 'meta-tags-seo' ); ?></h1>
         <hr>
         <form method="post" action="options.php">
             <?php
             settings_fields( 'mtg_settings_group' );
-            do_settings_sections( 'meta-tag-generator' );
+            do_settings_sections( 'meta-tags-seo' );
             submit_button();
             ?>
         </form>
         <hr>
         <p id="credit">
-            <?php esc_html_e( 'Developer : ', 'meta-tag-generator' ); ?>
+            <?php esc_html_e( 'Developer : ', 'meta-tags-seo' ); ?>
             <a href="<?php echo esc_url( 'http://anupammondal.in' ); ?>" target="_blank">
-                <?php esc_html_e( 'Anupam Mondal', 'meta-tag-generator' ); ?>
+                <?php esc_html_e( 'Anupam Mondal', 'meta-tags-seo' ); ?>
             </a>
         </p>
     </div>
@@ -47,11 +47,11 @@ function mtg_register_settings() {
         'sanitize_callback' => 'mtg_sanitize_default_twitter_card'
     ) );
 
-    add_settings_section( 'mtg_main_section', esc_html__( 'Main Settings', 'meta-tag-generator' ), '__return_null', 'meta-tag-generator' );
+    add_settings_section( 'mtg_main_section', esc_html__( 'Main Settings', 'meta-tags-seo' ), '__return_null', 'meta-tags-seo' );
 
-    add_settings_field( 'mtg_enabled', esc_html__( 'Enable Meta Tag Injection:', 'meta-tag-generator' ), 'mtg_enabled_callback', 'meta-tag-generator', 'mtg_main_section' );
-    add_settings_field( 'mtg_og_type', esc_html__( 'Default Open Graph Type:', 'meta-tag-generator' ), 'mtg_og_type_callback', 'meta-tag-generator', 'mtg_main_section' );
-    add_settings_field( 'mtg_twitter_card', esc_html__( 'Default Twitter Card Type:', 'meta-tag-generator' ), 'mtg_twitter_card_callback', 'meta-tag-generator', 'mtg_main_section' );
+    add_settings_field( 'mtg_enabled', esc_html__( 'Enable Meta Tag Injection:', 'meta-tags-seo' ), 'mtg_enabled_callback', 'meta-tags-seo', 'mtg_main_section' );
+    add_settings_field( 'mtg_og_type', esc_html__( 'Default Open Graph Type:', 'meta-tags-seo' ), 'mtg_og_type_callback', 'meta-tags-seo', 'mtg_main_section' );
+    add_settings_field( 'mtg_twitter_card', esc_html__( 'Default Twitter Card Type:', 'meta-tags-seo' ), 'mtg_twitter_card_callback', 'meta-tags-seo', 'mtg_main_section' );
 }
 add_action( 'admin_init', 'mtg_register_settings' );
 
@@ -65,10 +65,10 @@ function mtg_og_type_callback() {
     ?>
     <select name="mtg_default_og_type">
         <option value="website" <?php selected( $value, 'website', false ); ?>>
-            <?php esc_html_e( 'Website', 'meta-tag-generator' ); ?>
+            <?php esc_html_e( 'Website', 'meta-tags-seo' ); ?>
         </option>
         <option value="article" <?php selected( $value, 'article', false ); ?>>
-            <?php esc_html_e( 'Article', 'meta-tag-generator' ); ?>
+            <?php esc_html_e( 'Article', 'meta-tags-seo' ); ?>
         </option>
     </select>
     <?php
@@ -79,10 +79,10 @@ function mtg_twitter_card_callback() {
     ?>
     <select name="mtg_default_twitter_card">
         <option value="summary" <?php selected( $value, 'summary', false ); ?>>
-            <?php esc_html_e( 'Summary Card', 'meta-tag-generator' ); ?>
+            <?php esc_html_e( 'Summary Card', 'meta-tags-seo' ); ?>
         </option>
         <option value="summary_large_image" <?php selected( $value, 'summary_large_image', false ); ?>>
-            <?php esc_html_e( 'Large Summary Card', 'meta-tag-generator' ); ?>
+            <?php esc_html_e( 'Large Summary Card', 'meta-tags-seo' ); ?>
         </option>
     </select>
     <?php
