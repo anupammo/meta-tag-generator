@@ -8,8 +8,8 @@
  * Version: 1.2.0
  * Author: Anupam Mondal
  * Author URI: https://anupammondal.in
- * License: GPLv2 or later
- * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * License: GPLv3
+ * License URI: https://raw.githubusercontent.com/anupammo/meta-tags-seo/refs/heads/main/LICENSE
  * Text Domain: meta-tags-seo
  */
 
@@ -17,7 +17,31 @@ defined('ABSPATH') or die('No direct access allowed!');
 
 // Include meta box and settings functions
 require_once plugin_dir_path(__FILE__) . 'includes/meta-box.php';
-require_once plugin_dir_path(__FILE__) . 'includes/settings.php';
+require_once plugin_dir_path(__FILE__) . 'includes/settings.php';/**
+* Plugin Activation: Set default settings
+*/
+function mtg_activate_plugin() {
+   // Default settings for the plugin
+   add_option('mtg_enabled', 'yes');
+   add_option('mtg_default_og_type', 'website');
+   add_option('mtg_default_twitter_card', 'summary_large_image');
+}
+register_activation_hook(__FILE__, 'mtg_activate_plugin');
+
+/**
+* Plugin Deactivation: Cleanup settings
+*/
+function mtg_deactivate_plugin() {
+   // Remove options (optional cleanup)
+   delete_option('mtg_enabled');
+   delete_option('mtg_default_og_type');
+   delete_option('mtg_default_twitter_card');
+}
+register_deactivation_hook(__FILE__, 'mtg_deactivate_plugin');
+
+/**
+* Enqueue Admin Styles
+*/
 
 function mtg_enqueue_admin_styles($hook) {
     if ($hook === 'post.php' || $hook === 'post-new.php') { // Load styles only in post/page editors
