@@ -49,9 +49,9 @@ function mtg_register_settings() {
 
     add_settings_section( 'mtg_main_section', esc_html__( 'Main Settings', 'meta-tags-seo' ), '__return_null', 'meta-tags-seo' );
 
-    add_settings_field( 'mtg_enabled', esc_html__( 'Enable Meta Tag Injection:', 'meta-tags-seo' ), 'mtg_enabled_callback', 'meta-tags-seo', 'mtg_main_section' );
-    add_settings_field( 'mtg_og_type', esc_html__( 'Default Open Graph Type:', 'meta-tags-seo' ), 'mtg_og_type_callback', 'meta-tags-seo', 'mtg_main_section' );
-    add_settings_field( 'mtg_twitter_card', esc_html__( 'Default Twitter Card Type:', 'meta-tags-seo' ), 'mtg_twitter_card_callback', 'meta-tags-seo', 'mtg_main_section' );
+    add_settings_field( 'mtg_enabled', esc_html__( 'Enable Meta Tags:', 'meta-tags-seo' ), 'mtg_enabled_callback', 'meta-tags-seo', 'mtg_main_section' );
+    add_settings_field( 'mtg_og_type', esc_html__( 'Open Graph Type:', 'meta-tags-seo' ), 'mtg_og_type_callback', 'meta-tags-seo', 'mtg_main_section' );
+    add_settings_field( 'mtg_twitter_card', esc_html__( 'Twitter Card Type:', 'meta-tags-seo' ), 'mtg_twitter_card_callback', 'meta-tags-seo', 'mtg_main_section' );
 }
 add_action( 'admin_init', 'mtg_register_settings' );
 
@@ -63,7 +63,7 @@ function mtg_enabled_callback() {
 function mtg_og_type_callback() {
     $value = get_option( 'mtg_default_og_type', 'website' );
     ?>
-    <select name="mtg_default_og_type">
+    <select name="mtg_default_og_type" class="frm-select">
         <option value="website" <?php selected( $value, 'website', false ); ?>>
             <?php esc_html_e( 'Website', 'meta-tags-seo' ); ?>
         </option>
@@ -77,7 +77,7 @@ function mtg_og_type_callback() {
 function mtg_twitter_card_callback() {
     $value = get_option( 'mtg_default_twitter_card', 'summary_large_image' );
     ?>
-    <select name="mtg_default_twitter_card">
+    <select name="mtg_default_twitter_card" class="frm-select">
         <option value="summary" <?php selected( $value, 'summary', false ); ?>>
             <?php esc_html_e( 'Summary Card', 'meta-tags-seo' ); ?>
         </option>
