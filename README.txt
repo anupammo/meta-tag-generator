@@ -5,7 +5,7 @@ Requires at least: 5.4
 Requires PHP: 7.2  
 Tested up to: 6.8 
 Stable tag: 1.2.0 
-License: GPLv2 or later
+License: GPLv3
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Tags: meta tags, SEO, Open Graph, Twitter Card, Schema Markup 
  
